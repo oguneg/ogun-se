@@ -22,7 +22,11 @@ const GAMES = [
 ];
 
 const $ = (s, el = document) => el.querySelector(s);
-const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Motion: the system "reduce motion" setting is the default, and the button on the strip overrides it (and is remembered).
+const osReduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+const initialMotion = (os, stored) => (stored === "on" ? true : stored === "off" ? false : !os);
+let motion = initialMotion(osReduced(), (() => { try { return localStorage.getItem("motion"); } catch (e) { return null; } })());
+document.documentElement.dataset.motion = motion ? "on" : "off";
 
 function card(g) {
   const el = document.createElement(g.url ? "a" : "article");
@@ -45,8 +49,9 @@ $("#mail").addEventListener("click", e => {
 });
 
 // 3D tilt on cards
-if (!reduced && matchMedia("(hover:hover)").matches) {
+if (matchMedia("(hover:hover)").matches) {
   document.addEventListener("mousemove", e => {
+    if (!motion) return;
     const el = e.target.closest && e.target.closest(".game"); if (!el) return;
     const r = el.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
@@ -66,7 +71,7 @@ document.querySelectorAll(".rv,.stat,.steps li,.pace-points article,.chat,.broke
 
 function countUp(b) {
   const to = parseFloat(b.dataset.n), suf = b.dataset.suffix || "", dec = String(to).includes(".") ? 1 : 0;
-  if (reduced) { b.textContent = to.toFixed(dec) + suf; return; }
+  if (!motion) { b.textContent = to.toFixed(dec) + suf; return; }
   const t0 = performance.now();
   (function f(t) {
     const p = Math.min((t - t0) / 1200, 1), e = 1 - Math.pow(1 - p, 3);
@@ -161,7 +166,7 @@ function step(dt = 1) {
 }
 
 // The loop: exactly one at a time, however often it is started and stopped.
-let running = true, raf = 0, last = 0;
+let running = true, inView = true, raf = 0, last = 0;
 function frame(now) {
   raf = 0;
   if (!running) return;
@@ -170,7 +175,7 @@ function frame(now) {
   step(dt);
   raf = requestAnimationFrame(frame);
 }
-function start() { if (!raf && running && !reduced) { last = 0; raf = requestAnimationFrame(frame); } }
+function start() { if (!raf && running && motion) { last = 0; raf = requestAnimationFrame(frame); } }
 
 hero.addEventListener("pointermove", e => {
   const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
@@ -181,12 +186,32 @@ hero.addEventListener("pointermove", e => {
   mouse.x = x; mouse.y = y; mouse.t = e.timeStamp;
 });
 hero.addEventListener("pointerleave", () => { mouse.x = mouse.y = -9999; mouse.vx = mouse.vy = 0; });
-new IntersectionObserver(([e]) => { running = e.isIntersecting; if (running) start(); }).observe(hero);
+new IntersectionObserver(([e]) => { inView = e.isIntersecting; running = inView && motion; if (running) start(); }).observe(hero);
 
 let relayoutQueued = false;   // coalesce bursts of resize events (zooming fires dozens) into one layout per frame
-const relayout = () => { if (relayoutQueued) return; relayoutQueued = true; requestAnimationFrame(() => { relayoutQueued = false; layout(); }); };
+const relayout = () => { if (relayoutQueued) return; relayoutQueued = true; requestAnimationFrame(() => { relayoutQueued = false; layout(); if (!motion) step(0); }); };   // a still canvas is cleared by a resize, so repaint it
 addEventListener("resize", relayout);
 if ("ResizeObserver" in window) new ResizeObserver(relayout).observe(hero);
 
 layout();
-if (reduced) { step(0); running = false; } else start();
+
+// The button on the marquee strip: pause or play every moving thing on the page.
+const motionBtn = $("#motion");
+function applyMotion() {
+  document.documentElement.dataset.motion = motion ? "on" : "off";
+  motionBtn.textContent = motion ? "⏸ Pause motion" : "▶ Play motion";
+  motionBtn.setAttribute("aria-label", motion ? "Pause motion on this page" : "Play motion on this page");
+  running = inView && motion;
+  if (motion) start(); else { if (raf) cancelAnimationFrame(raf); raf = 0; step(0); }
+  document.querySelectorAll(".stat b[data-n]").forEach(b => { if (!motion) b.textContent = b.dataset.n + (b.dataset.suffix || ""); });
+}
+motionBtn.addEventListener("click", () => {
+  motion = !motion;
+  try { localStorage.setItem("motion", motion ? "on" : "off"); } catch (e) { /* private window: the choice just is not remembered */ }
+  applyMotion();
+});
+matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", () => {   // follow the system setting unless the visitor chose
+  let stored = null; try { stored = localStorage.getItem("motion"); } catch (e) { /* ignore */ }
+  if (!stored) { motion = initialMotion(osReduced(), null); applyMotion(); }
+});
+applyMotion();

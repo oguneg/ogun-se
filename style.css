@@ -53,7 +53,7 @@ h1 u{text-decoration:none;color:var(--ink);background:linear-gradient(transparen
 .s-pink{background:var(--pink)}.s-yellow{background:var(--yellow)}.s-green{background:var(--green)}.s-blue{background:var(--blue);color:#fff}
 
 /* marquee */
-.marquee{overflow:hidden;background:var(--ink);color:var(--bg);margin:clamp(56px,9vw,110px) 0 0;transform:rotate(-1.5deg) scale(1.03);padding:18px 20px}
+.marquee{position:relative;overflow:hidden;background:var(--ink);color:var(--bg);margin:clamp(56px,9vw,110px) 0 0;transform:rotate(-1.5deg) scale(1.03);padding:18px 20px}
 .track{display:flex;gap:40px;width:max-content;animation:slide 34s linear infinite;font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(1.4rem,3vw,2.2rem)}
 .marquee:hover .track{animation-play-state:paused}
 .track span::after{content:'✦';margin-left:40px;color:var(--yellow)}
@@ -133,4 +133,16 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,5vw,64
 
 @media (max-width:900px){.pace-grid{grid-template-columns:1fr}.flow li:not(:last-child)::after{display:none}}
 @media (max-width:600px){.nav nav a:not(.pill){display:none}.steps li{padding-left:56px}.steps li::before{left:18px}.pace-points{grid-template-columns:1fr}.open{white-space:normal}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+/* Motion: follows the system "reduce motion" setting by default, and the button on the strip overrides it either way. */
+@media (prefers-reduced-motion:reduce){:root:not([data-motion="on"]) *{animation:none!important;transition:none!important}:root:not([data-motion="on"]) .rv{opacity:1;transform:none}}
+:root[data-motion="off"] *{animation:none!important;transition:none!important}
+:root[data-motion="off"] .rv{opacity:1;transform:none}
+/* With the strip held still, show every tag instead of a clipped half */
+:root[data-motion="off"] .track,:root:not([data-motion="on"]) .track.still{width:auto}
+:root[data-motion="off"] .track{flex-wrap:wrap;justify-content:center;gap:6px 30px;padding:4px 190px 4px 20px}
+:root[data-motion="off"] .track span:nth-child(n+11){display:none}
+@media (max-width:700px){:root[data-motion="off"] .track{padding:56px 20px 4px}}
+
+.motion{position:absolute;right:18px;top:50%;transform:translateY(-50%);z-index:2;font:700 .9rem 'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);border:3px solid var(--bg);border-radius:99px;padding:8px 16px;cursor:pointer;transition:transform .12s}
+.motion:hover{transform:translateY(-50%) scale(1.05)}
+@media (max-width:700px){.motion{top:12px;right:50%;transform:translateX(50%);font-size:.8rem;padding:6px 14px}.motion:hover{transform:translateX(50%) scale(1.05)}}
