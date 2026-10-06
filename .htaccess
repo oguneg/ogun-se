@@ -1,0 +1,7 @@
+# HTML, CSS and JS are small and change often: make browsers check for a new copy every time (a cheap 304 when nothing changed).
+# Images keep the host default long cache.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
