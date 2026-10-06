@@ -143,6 +143,6 @@ footer{display:flex;justify-content:space-between;padding:28px clamp(20px,5vw,64
 :root[data-motion="off"] .track span:nth-child(n+11){display:none}
 @media (max-width:700px){:root[data-motion="off"] .track{padding:56px 20px 4px}}
 
-.motion{position:absolute;right:18px;top:50%;transform:translateY(-50%);z-index:2;font:700 .9rem 'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);border:3px solid var(--bg);border-radius:99px;padding:8px 16px;cursor:pointer;transition:transform .12s}
+.motion{position:absolute;right:clamp(36px,5vw,64px);top:50%;transform:translateY(-50%);z-index:2;font:700 .9rem 'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);border:3px solid var(--bg);border-radius:99px;padding:8px 16px;cursor:pointer;transition:transform .12s}
 .motion:hover{transform:translateY(-50%) scale(1.05)}
 @media (max-width:700px){.motion{top:12px;right:50%;transform:translateX(50%);font-size:.8rem;padding:6px 14px}.motion:hover{transform:translateX(50%) scale(1.05)}}
