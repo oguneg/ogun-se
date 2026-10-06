@@ -1,0 +1,5 @@
+# Local tooling and build output: nothing here should be deployed, because everything in the repo is served publicly.
+.claude/
+.impeccable/
+*.zip
+.DS_Store

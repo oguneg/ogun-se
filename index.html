@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ogün Gündogdu — AI Engineer</title>
+<meta name="description" content="AI engineer in Stockholm. I build LLM apps with tool calling, guardrails and tests, and run them in production. Live demos inside.">
+<meta property="og:title" content="Ogün Gündogdu — AI Engineer">
+<meta property="og:description" content="I build AI apps and I ship them. Try the live demos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ogun.se/">
+<link rel="canonical" href="https://ogun.se/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='28' fill='%23ff4d8d'/><circle cx='50' cy='50' r='22' fill='%23ffd23f'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#top" aria-label="ogün.se, back to top">ogün<span>.se</span></a>
+  <nav>
+    <a href="#pace">Flagship</a>
+    <a href="#shipped">Shipped</a>
+    <a href="#path">Path</a>
+    <a class="pill" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <canvas id="playground" aria-hidden="true"></canvas>
+    <div class="hero-copy">
+      <p class="eyebrow">Ogün Gündogdu · AI engineer · Stockholm</p>
+      <h1>I build AI apps<br>and I <em>ship</em> them<u>.</u></h1>
+      <p class="lede">I build LLM products with tool calling, guardrails and tests, and run them in production. Before that, seven years shipping games to millions of players. Everything below is live, so go and break it.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="https://pace.ogun.se" target="_blank" rel="noopener">Try Sergeant Pace ↗</a>
+        <a class="btn btn-ghost" href="#shipped">See what I've shipped</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Numbers">
+    <div class="stat s-yellow"><b data-n="10" data-suffix="M+">0</b><span>players reached</span></div>
+    <div class="stat s-pink"><b data-n="100" data-suffix="+">0</b><span>prototypes built</span></div>
+    <div class="stat s-green"><b data-n="3">0</b><span>launches into iOS US top charts</span></div>
+    <div class="stat s-blue"><b data-n="5">0</b><span>apps live on the web today</span></div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>LLM apps</span><span>Tool calling</span><span>Guardrails</span><span>Evals &amp; tests</span><span>Python</span><span>Docker</span><span>CI/CD</span><span>Unity</span><span>C#</span><span>Prototyping</span>
+      <span>LLM apps</span><span>Tool calling</span><span>Guardrails</span><span>Evals &amp; tests</span><span>Python</span><span>Docker</span><span>CI/CD</span><span>Unity</span><span>C#</span><span>Prototyping</span>
+    </div>
+  </div>
+
+  <section id="pace" class="pace">
+    <p class="kicker">Flagship</p>
+    <h2>Sergeant Pace</h2>
+    <p class="sub">An AI running coach that yells at you, plans your runs from couch to marathon, and is quietly terrified of you getting injured.</p>
+
+    <div class="pace-grid">
+      <div class="chat" aria-label="A real exchange with the coach">
+        <p class="bubble you">Knee hurts, stopped early. Effort 9.</p>
+        <p class="bubble coach">Are you trying to retire early?! Effort 9 is way over your limit, and you only finished a quarter of the work. Stop running until that knee pain clears up and see a doctor if it persists.</p>
+        <p class="calls"><code>log_run</code><code>adjust_plan(step_back)</code></p>
+        <p class="chat-note">A real reply from the live app. The plan stepped back to shorter jogs and longer walk breaks, decided by the model but allowed by the code.</p>
+      </div>
+
+      <div class="pace-points">
+        <article>
+          <h3>The model talks, the code decides</h3>
+          <p>Gemini handles personality and judgment calls. Every number and every safety rule lives in plain, tested code. The model can't write a number into the plan.</p>
+        </article>
+        <article>
+          <h3>Limits that slide, never jump</h3>
+          <p>Effort and pace ceilings tighten smoothly with body fat and age. 29.7% and 30.1% get almost the same rules. Weigh-ins loosen or tighten them as you change.</p>
+        </article>
+        <article>
+          <h3>Tested like production</h3>
+          <p>124 tests, no API key needed. I broke the guardrails on purpose, ten different ways, to prove the tests catch it.</p>
+        </article>
+        <article>
+          <h3>Operated, not just demoed</h3>
+          <p>One recruit per visitor, per-IP rate limits, daily spend caps, error details hidden, push-to-deploy, one JSON log line per turn.</p>
+        </article>
+      </div>
+    </div>
+
+    <ol class="flow" aria-label="Architecture">
+      <li>Browser</li>
+      <li>Flask<small>sessions · rate limits · daily caps</small></li>
+      <li>Gemini coach<small>6 tools · retry · model fallback</small></li>
+      <li>tools.py<small>plan · limits · safety flags</small></li>
+      <li>State<small>one file per visitor</small></li>
+    </ol>
+
+    <div class="broke">
+      <h3>What broke once real people used it</h3>
+      <ul>
+        <li><b>Visitors killed each other's requests.</b> Each conversation made its own Gemini client and overwrote a shared one; when two people arrived together the first was garbage collected mid-request. Found it within minutes of going live. Now one shared client, with a regression test.</li>
+        <li><b>New visitors waited 70 seconds.</b> On a free-tier key the top models run out of daily quota, and every new conversation retried them all. Now it remembers the last model that worked. Second visitor: 9 seconds.</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <a class="btn btn-main" href="https://pace.ogun.se" target="_blank" rel="noopener">Try it live ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/oguneg/sergeant-pace" target="_blank" rel="noopener">Read the code ↗</a>
+    </div>
+    <p class="fine">It runs on a free-tier Gemini key with a daily budget. If the sergeant is off duty, the day's budget is spent. Come back tomorrow.</p>
+  </section>
+
+  <section id="shipped" class="cards-sec">
+    <div class="head"><h2>Shipped <small id="shipped-count">4</small></h2></div>
+    <p class="note">Small, sharp tools, all live. Click through.</p>
+    <div class="grid" id="shipped-grid"></div>
+  </section>
+
+  <section id="games" class="cards-sec games">
+    <div class="head"><h2>Before AI: games</h2></div>
+    <p class="note">Before AI, seven years in mobile games. The two I'm proudest of are on the App Store, and my own experiments live on itch.io.</p>
+    <div class="grid big" id="games-grid"></div>
+  </section>
+
+  <section id="path" class="path">
+    <h2>The path so far</h2>
+    <ol class="steps">
+      <li class="c-purple">
+        <time>2025 – now</time>
+        <h3>AI engineer</h3>
+        <p>Building and shipping LLM products end to end: tool calling, guardrails, tests and deployment on my own server. Sergeant Pace is the flagship, with web apps like SL Live alongside it.</p>
+      </li>
+      <li class="c-blue">
+        <time>2024 – 2025</time>
+        <h3>Lessmore · AI-powered prototyping</h3>
+        <p>Paired with a game designer to turn ideas into playable casual-game prototypes. I used AI heavily across the whole prototyping loop, which is where it became part of my daily workflow, and why ideas got to a playable state, then kept or killed, so much faster.</p>
+      </li>
+      <li class="c-green">
+        <time>2021 – 2023</time>
+        <h3>Phoca.io · co-founder</h3>
+        <p>Co-founded and led a startup studio. Built 50+ projects and put 3 of them into the iOS US top charts. Tap on Time passed 3.5M players and still has about 50K daily.</p>
+      </li>
+      <li class="c-yellow">
+        <time>2021</time>
+        <h3>Gameguru</h3>
+        <p>A new hyper-casual prototype every week: build it, test it, move on.</p>
+      </li>
+      <li class="c-orange">
+        <time>2019 – 2021</time>
+        <h3>Ruby Game Studio</h3>
+        <p>Part of 30+ commercial projects, from rough prototypes to full casual games. Played a major role in several of them, including Doctor Care, Drink Inc., Spa Master and Transport Master, all on the market.</p>
+      </li>
+      <li class="c-pink">
+        <time>2018 – 2019</time>
+        <h3>Margen Tech · VR</h3>
+        <p>Built and maintained a maritime simulator for VR in Unity, used to train and examine maritime personnel.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contact" class="play">
+    <div class="play-box">
+      <h2>Let's talk AI</h2>
+      <p>Curious how any of this works under the hood? I'm happy to walk you through it.</p>
+      <div class="cta">
+        <a class="btn btn-dark" id="mail" href="#contact">Email me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ogungundogdu" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/oguneg" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn-ghost" href="https://ogun.itch.io" target="_blank" rel="noopener">itch.io ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© <span id="yr"></span> Ogün Gündogdu</span>
+  <span>ogün.se</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
