@@ -5,3 +5,10 @@
     Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
+
+# Notes for editors and tools live in the repo but are not part of the site.
+<IfModule mod_authz_core.c>
+  <FilesMatch "^(CLAUDE|AGENTS)\.md$|^\.gitignore$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
