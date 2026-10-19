@@ -127,6 +127,11 @@ a.game{text-decoration:none}
 .play-box{background:#8a1e84 linear-gradient(135deg,#4b2bc4,#c4175f);color:#fff;border:3px solid var(--ink);border-radius:40px;box-shadow:0 10px 0 var(--ink);padding:32px 24px;padding:clamp(32px,7vw,80px);text-align:center}
 .play-box p{margin:14px auto 28px;font-size:1.2rem;max-width:56ch}
 .play-box .cta{justify-content:center}
+.offer{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:26px auto 4px;max-width:900px;text-align:left}
+.offer li{background:rgba(20,10,60,.4);border:2px solid rgba(255,255,255,.6);border-radius:20px;padding:16px 18px}
+.offer b{display:block;font-family:'Bricolage Grotesque','DM Sans',sans-serif;font-weight:800;font-size:1.2rem;line-height:1.2;margin-bottom:6px}
+.offer span{display:block;font-size:.98rem;line-height:1.5}
+.play-box .how{font-size:1.05rem;margin-top:24px}
 footer{display:flex;justify-content:space-between;padding:28px clamp(20px,5vw,64px);font-weight:700;color:var(--muted)}
 
 /* reveal */
