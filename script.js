@@ -42,13 +42,6 @@ SHIPPED.forEach(g => $("#shipped-grid").appendChild(card(g)));
 GAMES.forEach(g => $("#games-grid").appendChild(card(g)));
 $("#shipped-count").textContent = SHIPPED.length;
 
-// The email address is assembled here so it is not sitting in the page source for scrapers.
-const mailHref = () => "mailto:" + ["hello", "ogun.se"].join("@") + "?subject=" + encodeURIComponent("Hello from ogun.se");
-$("#mail").addEventListener("click", e => {
-  e.preventDefault();
-  location.href = mailHref();
-});
-
 // 3D tilt on cards
 if (matchMedia("(hover:hover)").matches) {
   document.addEventListener("mousemove", e => {
