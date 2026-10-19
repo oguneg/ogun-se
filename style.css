@@ -87,7 +87,7 @@ h1 u{text-decoration:none;color:var(--ink);background:linear-gradient(transparen
 .broke ul{list-style:none;display:grid;gap:12px;max-width:60ch}
 .broke li{padding-left:22px;position:relative}
 .broke li::before{content:'';position:absolute;left:0;top:.5em;width:10px;height:10px;border-radius:50%;background:var(--pink)}
-.fine{margin-top:18px;font-size:.9rem;color:var(--muted);max-width:640px}
+.fine{margin-top:18px;font-size:.9rem;line-height:1.55;color:var(--muted);max-width:58ch}
 
 /* cards (shipped + games) */
 .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
