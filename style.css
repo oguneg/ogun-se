@@ -42,6 +42,8 @@ h1 u{text-decoration:none;color:var(--ink);background:linear-gradient(transparen
 .btn-ghost{background:#fff}
 .btn-dark{background:var(--ink);color:#fff;border-color:#fff;box-shadow:0 6px 0 #fff}
 .btn-dark:hover{box-shadow:0 3px 0 #fff}
+/* The address is plain text on purpose (no mailto links, ever): one click selects all of it so it is easy to copy. */
+.email{display:inline-block;padding:15px 26px;border-radius:99px;font-weight:700;background:var(--ink);color:#fff;border:3px solid #fff;box-shadow:0 6px 0 #fff;user-select:all;cursor:text}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding-top:0;margin-top:-30px;position:relative;z-index:3}

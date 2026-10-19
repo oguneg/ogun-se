@@ -21,7 +21,7 @@ HTML, CSS and JS are served `no-cache`; images keep a 7-day cache, so rename an 
 ## Voice and facts
 
 - Name: **Ogün Gündogdu** (no ğ). Logo text: `ogün.se`. Positioning: an AI engineer who ships. No job-hunting tone ("open to roles", "hiring").
-- Contact: `hello@ogun.se`, shown as plain text and a `mailto:` link in the contact box (a deliberate choice: the address is visible, not hidden behind a button). Never publish a phone number.
+- Contact: `hello@ogun.se`, written as **plain text**. **Never use `mailto:` links** (the owner's rule: nobody uses them), anywhere on the site, including the Bottle Smash pages. Never publish a phone number.
 - Facts come from his CV and his repos only: 10M+ players reached, 100+ prototypes, 3 iOS US top-chart launches, 5 live web apps, Tap on Time 3.5M+ players, Phoca co-founder (2021 to 2023), Lessmore 2024 to 2025. **Do not invent numbers or tools.** The Lessmore block is deliberately general until he supplies specifics.
 - Links: pace.ogun.se (flagship), sl.ogun.se, oguneg.github.io/svenskfotboll, /verb-tranare, /walktoburn, the two App Store pages, ogun.itch.io, github.com/oguneg/sergeant-pace, linkedin.com/in/ogungundogdu.
 
