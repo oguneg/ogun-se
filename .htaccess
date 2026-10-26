@@ -12,3 +12,6 @@
     Require all denied
   </FilesMatch>
 </IfModule>
+
+# The privacy policy covers all games; the old Bottle Smash address (already given to the App Store) points to it.
+Redirect 301 /bottle-smash/privacy /games/privacy
