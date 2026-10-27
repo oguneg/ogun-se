@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Bottle Smash</title>
+<meta name="description" content="Join the Bottle Smash Android test in three taps.">
+<link rel="canonical" href="https://ogun.se/bottle-smash/test/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='28' fill='%23ff4d8d'/><circle cx='50' cy='50' r='22' fill='%23ffd23f'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fff6e5;--ink:#1b1230;--muted:#554b6b;--pink:#c81d52;--card:#ffffff;--line:#ecdcc0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  main{max-width:640px;margin:0 auto;padding:40px 20px 80px}
+  .logo{font-family:'Bricolage Grotesque','DM Sans',sans-serif;font-weight:800;font-size:1.5rem;text-decoration:none;color:var(--ink)}
+  .logo span{color:var(--pink)}
+  h1,h2{font-family:'Bricolage Grotesque','DM Sans',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  h1{font-size:clamp(2rem,7vw,3rem);margin:40px 0 12px}
+  h2{font-size:1.2rem;margin-bottom:6px}
+  p{margin-bottom:10px}
+  .lead{font-size:1.1rem;margin-bottom:28px}
+  .meta{color:var(--muted)}
+  ol{list-style:none;counter-reset:step;display:grid;gap:14px;margin-bottom:32px}
+  li{counter-increment:step;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px 18px 18px 64px;position:relative}
+  li::before{content:counter(step);position:absolute;left:18px;top:18px;width:32px;height:32px;border-radius:50%;background:var(--pink);color:#fff;font-weight:700;display:grid;place-items:center}
+  li p{color:var(--muted);margin-bottom:12px}
+  .btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:12px}
+  .btn:hover{background:var(--pink)}
+  a{color:var(--ink)}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+<main>
+  <a class="logo" href="https://ogun.se/">ogün<span>.se</span></a>
+  <h1>Test Bottle Smash</h1>
+  <p class="lead">Bottle Smash is a colour-matching arcade game coming to Android. Help test it before release: it takes three taps, and you don't need to send anyone your email.</p>
+
+  <ol>
+    <li>
+      <h2>Join the testers group</h2>
+      <p>Sign in with the Google account you use on your Android phone, then tap <strong>Join group</strong>. You won't get any emails from it.</p>
+      <a class="btn" href="https://groups.google.com/g/bottle-smash-testers" target="_blank" rel="noopener">Join the group</a>
+    </li>
+    <li>
+      <h2>Become a tester</h2>
+      <p>With the same Google account, tap <strong>Become a tester</strong>. If it says the test isn't available, wait a few minutes after joining the group and try again.</p>
+      <a class="btn" href="https://play.google.com/apps/testing/com.phoca.bottlesmash" target="_blank" rel="noopener">Become a tester</a>
+    </li>
+    <li>
+      <h2>Install it from Google Play</h2>
+      <p>Open this on your Android phone and install. Please keep it installed and play now and then for at least two weeks: Google needs that before the game can go public.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.phoca.bottlesmash" target="_blank" rel="noopener">Get it on Google Play</a>
+    </li>
+  </ol>
+
+  <p class="meta">Android only for now. The test build shows real ads, but only when you choose to watch one. See the <a href="https://ogun.se/games/privacy/">privacy policy</a>. Questions or bugs: support@ogun.se</p>
+</main>
+</body>
+</html>
