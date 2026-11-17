@@ -11,7 +11,7 @@ const SHIPPED = [
 ];
 const GAMES = [
   { name: "Tap on Time!", tag: "Phoca", host: "App Store", img: "images/tap-on-time.jpg", color: "#ffd23f",
-    blurb: "Tap the target as your avatar spins around the circle, at ever higher speeds. 3.5M+ players and several runs in the iOS US top charts.",
+    blurb: "Tap the target as your avatar spins around the circle, at ever higher speeds. 10M+ players and several runs in the iOS US top charts.",
     url: "https://apps.apple.com/se/app/tap-on-time/id1607320796?l=en-GB" },
   { name: "Beauty Care!", tag: "Ruby Game Studio", host: "App Store", img: "images/beauty-care.jpg", color: "#ff4d8d",
     blurb: "Satisfying mini games where you unlock more tools and update your office.",
