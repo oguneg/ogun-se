@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ogün Gündogdu — AI Engineer</title>
-<meta name="description" content="AI engineer in Stockholm. I build LLM apps with tool calling, guardrails and tests, and run them in production. Live demos inside.">
-<meta property="og:title" content="Ogün Gündogdu — AI Engineer">
-<meta property="og:description" content="I build AI apps and I ship them. Try the live demos.">
+<title>Ogün Gündogdu — AI engineer and game developer</title>
+<meta name="description" content="AI engineer and game developer in Stockholm. Seven years of mobile games, now making games and apps with AI: Claude Code driving Unity, end to end.">
+<meta property="og:title" content="Ogün Gündogdu — AI engineer and game developer">
+<meta property="og:description" content="I build games and apps with AI. Seven years of mobile games, now Claude Code driving Unity end to end.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ogun.se/">
 <link rel="canonical" href="https://ogun.se/">
@@ -21,7 +21,8 @@
 <header class="nav">
   <a class="logo" href="#top" aria-label="ogün.se, back to top">ogün<span>.se</span></a>
   <nav>
-    <a href="#pace">Flagship</a>
+    <a href="#making">Games</a>
+    <a href="#pace">AI</a>
     <a href="#shipped">Shipped</a>
     <a href="#path">Path</a>
     <a class="pill" href="#contact">Work with me</a>
@@ -33,11 +34,11 @@
   <section class="hero">
     <canvas id="playground" aria-hidden="true"></canvas>
     <div class="hero-copy">
-      <p class="eyebrow">Ogün Gündogdu · AI engineer · Stockholm</p>
-      <h1>I build AI apps<br>and I <em>ship</em> them<u>.</u></h1>
-      <p class="lede">I build LLM products with tool calling, guardrails and tests, and run them in production. Before that, seven years shipping games to millions of players. Everything below is live, so go and break it.</p>
+      <p class="eyebrow">Ogün Gündogdu · AI engineer &amp; game developer · Stockholm</p>
+      <h1>I build games<br>and apps <em>with&nbsp;AI</em><u>.</u></h1>
+      <p class="lede">Seven years making mobile games for millions of players. Now I build with AI every day: Claude Code drives Unity from the first prototype to a store build, and I try out LLM apps on the side.</p>
       <div class="cta">
-        <a class="btn btn-main" href="https://pace.ogun.se" target="_blank" rel="noopener">Try Sergeant Pace ↗</a>
+        <a class="btn btn-main" href="#making">See how I make games</a>
         <a class="btn btn-ghost" href="#shipped">See what I've shipped</a>
       </div>
     </div>
@@ -52,16 +53,47 @@
 
   <div class="marquee">
     <div class="track" aria-hidden="true">
-      <span>LLM apps</span><span>Tool calling</span><span>Guardrails</span><span>Evals &amp; tests</span><span>Python</span><span>Docker</span><span>CI/CD</span><span>Unity</span><span>C#</span><span>Prototyping</span>
-      <span>LLM apps</span><span>Tool calling</span><span>Guardrails</span><span>Evals &amp; tests</span><span>Python</span><span>Docker</span><span>CI/CD</span><span>Unity</span><span>C#</span><span>Prototyping</span>
+      <span>Unity</span><span>C#</span><span>Claude Code</span><span>Unity CLI</span><span>Play-test bots</span><span>Blender scripting</span><span>LLM apps</span><span>Tool calling</span><span>Evals &amp; tests</span><span>Prototyping</span>
+      <span>Unity</span><span>C#</span><span>Claude Code</span><span>Unity CLI</span><span>Play-test bots</span><span>Blender scripting</span><span>LLM apps</span><span>Tool calling</span><span>Evals &amp; tests</span><span>Prototyping</span>
     </div>
     <button class="motion" id="motion" type="button">⏸ Pause motion</button>
   </div>
 
+  <section id="making" class="pace">
+    <p class="kicker">Now</p>
+    <h2>Games, made with AI end to end</h2>
+    <p class="sub">I make games with Claude Code driving the Unity editor through the Unity CLI. I set the direction and judge the feel; the agent writes the code, plays the build and checks its own work.</p>
+    <div class="pace-points">
+      <article>
+        <h3>The agent drives the editor</h3>
+        <p>Through the Unity CLI it opens scenes, enters play mode, runs scripts and tests, reads the console and captures the game view, so it can see what it built instead of guessing.</p>
+      </article>
+      <article>
+        <h3>A bot plays it first</h3>
+        <p>Headless play tests have an AI player run the game at a fixed frame rate, log stats and save frames. On one new game, the test bot cleared all 48 levels.</p>
+      </article>
+      <article>
+        <h3>Art as code</h3>
+        <p>For one game, the 3D characters come from Python scripts that run Blender without a window, so a model can be rebuilt and tweaked like any other code.</p>
+      </article>
+      <article>
+        <h3>From idea to store</h3>
+        <p>Builds for web, Android and iOS run from the command line, and one reusable kit sets up rewarded ads, privacy consent and analytics for each new mobile game.</p>
+      </article>
+    </div>
+    <div class="broke bench">
+      <h3>On the workbench</h3>
+      <ul>
+        <li><b>Mobile.</b> Bottle Smash!! is on its way to the App Store and Google Play.</li>
+        <li><b>PC.</b> My Steam developer account is being set up. In development: a racing and demolition-derby game, a beat-'em-up and a survivor-like roguelite.</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="pace" class="pace">
-    <p class="kicker">Flagship</p>
+    <p class="kicker">AI experiment</p>
     <h2>Sergeant Pace</h2>
-    <p class="sub">An AI running coach that yells at you, plans your runs from couch to marathon, and is quietly terrified of you getting injured.</p>
+    <p class="sub">An AI running coach that yells at you, plans your runs from couch to marathon, and is quietly terrified of you getting injured. It's an experiment, not a product: I built it to learn how to make an LLM agent behave.</p>
 
     <div class="pace-grid">
       <div class="chat" aria-label="A real exchange with the coach">
@@ -81,12 +113,12 @@
           <p>Effort and pace ceilings tighten smoothly with body fat and age. 29.7% and 30.1% get almost the same rules. Weigh-ins loosen or tighten them as you change.</p>
         </article>
         <article>
-          <h3>Tested like production</h3>
-          <p>124 tests, no API key needed. I broke the guardrails on purpose, ten different ways, to prove the tests catch it.</p>
+          <h3>Tests and evals</h3>
+          <p>194 tests that need no API key, plus evals that run real conversations against the live model. They caught the coach reading a 3 kg gain as a loss.</p>
         </article>
         <article>
-          <h3>Operated, not just demoed</h3>
-          <p>One recruit per visitor, per-IP rate limits, daily spend caps, error details hidden, push-to-deploy, one JSON log line per turn.</p>
+          <h3>Small, but online</h3>
+          <p>It runs on a cheap server with rate limits and a daily spend cap, so anyone can try it without running up a bill.</p>
         </article>
       </div>
     </div>
@@ -100,7 +132,7 @@
     </ol>
 
     <div class="broke">
-      <h3>What broke once real people used it</h3>
+      <h3>What broke once it went online</h3>
       <ul>
         <li><b>Visitors killed each other's requests.</b> Each conversation made its own Gemini client and overwrote a shared one; when two people arrived together the first was garbage collected mid-request. Found it within minutes of going live. Now one shared client, with a regression test.</li>
         <li><b>New visitors waited 70 seconds.</b> On a free-tier key the top models run out of daily quota, and every new conversation retried them all. Now it remembers the last model that worked. Second visitor: 9 seconds.</li>
@@ -131,8 +163,8 @@
     <ol class="steps">
       <li class="c-purple">
         <time>2025 – now</time>
-        <h3>AI engineer</h3>
-        <p>Building and shipping LLM products end to end: tool calling, guardrails, tests and deployment on my own server. Sergeant Pace is the flagship, with web apps like SL Live alongside it.</p>
+        <h3>Independent · AI and games</h3>
+        <p>Making games with Claude Code driving Unity, mobile first and Steam next, plus small AI and web experiments like Sergeant Pace and SL Live.</p>
       </li>
       <li class="c-blue">
         <time>2024 – 2025</time>
@@ -167,9 +199,9 @@
       <h2>Need something built?</h2>
       <p>I'm open to collaborations and taking on client projects. Got an idea, a prototype that has to become real, or an AI feature you're not sure how to build? Tell me about it.</p>
       <ul class="offer">
-        <li><b>AI features and agents</b><span>LLM apps with tool calling, guardrails and tests, built to run in production.</span></li>
-        <li><b>Web apps and tools</b><span>From idea to a live app on your own domain, like Sergeant Pace and SL Live.</span></li>
-        <li><b>Games and prototypes</b><span>Playable prototypes fast, and polished mobile games.</span></li>
+        <li><b>Games and prototypes</b><span>Playable Unity prototypes fast, built with AI, and polished mobile games.</span></li>
+        <li><b>AI features and agents</b><span>LLM features with tool calling, guardrails and tests.</span></li>
+        <li><b>Web apps and tools</b><span>From idea to a live app on your own domain, like SL Live.</span></li>
       </ul>
       <p class="how">Email me what you're trying to do, even if it's rough, and I'll tell you honestly whether and how I can help.</p>
       <div class="cta">

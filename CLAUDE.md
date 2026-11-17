@@ -1,10 +1,10 @@
 # ogün.se: portfolio site
 
-Static site for Ogün Gündogdu, an AI engineer in Stockholm (formerly mobile games). Live at https://ogun.se. No build step, no dependencies.
+Static site for Ogün Gündogdu, an AI engineer and game developer in Stockholm. Live at https://ogun.se. No build step, no dependencies.
 
 ## Files
 
-- `index.html`: all page copy (hero, stats, Sergeant Pace flagship, the path timeline, contact).
+- `index.html`: all page copy (hero, stats, "Games, made with AI end to end", the Sergeant Pace experiment, the path timeline, contact).
 - `script.js`: the card data (`SHIPPED`, `GAMES` arrays), the hero shapes, the motion button, count-up and tilt effects.
 - `style.css`: everything visual. `images/`: app icons and the itch.io logo. `.htaccess`: caching and blocked files.
 
@@ -20,11 +20,11 @@ HTML, CSS and JS are served `no-cache`; images keep a 7-day cache, so rename an 
 
 ## Voice and facts
 
-- Name: **Ogün Gündogdu** (no ğ). Logo text: `ogün.se`. Positioning: an AI engineer who ships. The site is also the shop window for his new sole proprietorship (enskild firma): the contact section ("Need something built?", nav pill "Work with me") invites client projects and collaborations. That is about winning work, not a job search, so still no employment tone ("open to roles", "hiring").
+- Name: **Ogün Gündogdu** (no ğ). Logo text: `ogün.se`. Positioning: an AI engineer and game developer who builds games and apps with AI. The main story is his game pipeline: Claude Code drives the Unity editor through the Unity CLI (play mode, console, tests, game-view captures), headless play-test bots, Blender modelled by Python scripts, command-line builds and a reusable ads/consent/analytics kit. His Steam developer account is being set up; the PC games in development are named by genre only on the site, never by working title, until he announces them. **Sergeant Pace is an experiment, not a product or a flagship**: never describe it as commercial, production or as having real users. The site is also the shop window for his new sole proprietorship (enskild firma): the contact section ("Need something built?", nav pill "Work with me") invites client projects and collaborations. That is about winning work, not a job search, so still no employment tone ("open to roles", "hiring").
 - The services on offer are only what he has actually shipped: AI features and agents, web apps and tools, games and prototypes. **Do not invent a business name, organisation number, prices, rates, guarantees or client names.** Once the firma is registered, add its name and org. number (Swedish marketing rules expect the trader to be identifiable).
 - Contact: `hello@ogun.se`, written as **plain text**. **Never use `mailto:` links** (the owner's rule: nobody uses them), anywhere on the site, including the Bottle Smash pages. Never publish a phone number.
-- Facts come from his CV and his repos only: 10M+ players reached, 100+ prototypes, 3 iOS US top-chart launches, 5 live web apps, Tap on Time 3.5M+ players, Phoca co-founder (2021 to 2023), Lessmore 2024 to 2025. **Do not invent numbers or tools.** The Lessmore block is deliberately general until he supplies specifics.
-- Links: pace.ogun.se (flagship), sl.ogun.se, oguneg.github.io/svenskfotboll, /verb-tranare, /walktoburn, the two App Store pages, ogun.itch.io, github.com/oguneg/sergeant-pace, linkedin.com/in/ogungundogdu.
+- Facts come from his CV and his repos only: 10M+ players reached, 100+ prototypes, 3 iOS US top-chart launches, 5 live web apps, Tap on Time 3.5M+ players, Phoca co-founder (2021 to 2023), Lessmore 2024 to 2025, Sergeant Pace 194 tests. **Do not invent numbers or tools.** The Lessmore block is deliberately general until he supplies specifics.
+- Links: pace.ogun.se (the AI experiment), sl.ogun.se, oguneg.github.io/svenskfotboll, /verb-tranare, /walktoburn, the two App Store pages, ogun.itch.io, github.com/oguneg/sergeant-pace, linkedin.com/in/ogungundogdu.
 
 ## Quality bars (check before saying done)
 
